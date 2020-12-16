@@ -1,0 +1,12 @@
+{
+    "id": "000000",
+    "FirstRun": "False",
+    "Time": "0",
+    "HighScore": "0",
+    "PushList": [
+        {"Date": "0", "Count": "1"},
+        {"Date": "0", "Count": "2"},
+        {"Date": "0", "Count": "3"},
+        "..."
+    ]
+}

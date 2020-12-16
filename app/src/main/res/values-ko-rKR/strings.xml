@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings">설정</string>
+    <string name="progress">진척도</string>
+    <string name="about">정보</string>
+    <string name="loading">로딩 중...</string>
+</resources>

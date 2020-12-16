@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Custon Toolbar -->
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/main_toolbar" />
+
+    <!-- 메인 뷰 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar">
+
+        <ProgressBar
+            android:id="@+id/main_content_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:max="3600"
+            android:paddingHorizontal="10dp"
+            android:progressTint="#FF00FF00"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/main_content_timeStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/main_content_progress"
+            app:layout_constraintLeft_toLeftOf="@id/main_content_progress" />
+
+        <TextView
+            android:id="@+id/main_content_timeEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/main_content_progress"
+            app:layout_constraintRight_toRightOf="@id/main_content_progress" />
+
+        <ImageButton
+            android:id="@+id/main_content_button"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@drawable/ic_red_button"
+            android:scaleType="centerCrop"
+            android:background="#00000000"
+            android:onClick="push"
+            />
+        <ImageView
+            android:id="@+id/main_content_connectionError"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toTopOf="@id/main_content_button"
+            app:layout_constraintRight_toLeftOf="@id/main_content_button"
+            android:src="@drawable/ic_connection_lost_24"
+            android:visibility="invisible"
+            />
+        <TextView
+            android:id="@+id/main_content_timeNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/main_content_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <!-- Ad UNIT ID: ca-app-pub-7866108369595166/4556173286 -->
+        <!-- Test UNIT ID: ca-app-pub-3940256099942544/6300978111 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center"
+            >
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+                android:id="@+id/main_content_adView"
+                ads.adUnitId="@string/banner_ad_unit_id_for_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
